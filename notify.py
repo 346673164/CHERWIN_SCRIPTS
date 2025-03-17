@@ -12,7 +12,7 @@ import urllib.parse
 
 import requests
 
-from requests.packages.urllib3.exceptions import InsecureRequestWarning
+from urllib3.exceptions import InsecureRequestWarning
 # 禁用安全请求警告
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 # 创建 session 对象，全局设置 verify=False
