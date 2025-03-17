@@ -10,7 +10,9 @@ from sys import exit
 import requests
 
 # 禁用安全请求警告
-
+from urllib3.exceptions import InsecureRequestWarning
+# 禁用安全请求警告
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 IS_DEV = False
 if os.path.isfile('DEV_ENV.py'):
     import DEV_ENV
@@ -1755,4 +1757,4 @@ if __name__ == '__main__':
         for index, infos in enumerate(tokens):
             run_result = RUN(infos, index).main()
             if not run_result: continue
-        if send: send(f'{APP_NAME}挂机通知', send_msg + TIPS_HTML)
+        if send: send(f'{APP_NAME}挂机通知', send_msg)
