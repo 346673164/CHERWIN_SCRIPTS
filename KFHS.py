@@ -1,7 +1,7 @@
 # !/usr/bin/python3
 # -- coding: utf-8 --
 # -------------------------------
-# cron "0 8 * * " script-path=xxx.py,tag=匹配cron用
+# cron "0 8 * * *" script-path=xxx.py,tag=匹配cron用
 # const $ = new Env('微信公众号：卡夫亨氏新厨艺')
 
 import os
@@ -49,19 +49,22 @@ class RUN:
         self.s.verify = False
 
         self.headers = {
-            'Host': 'kraftheinzcrm-uat.kraftheinz.net.cn',
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x63090719) XWEB/8447 Flue',
-            'token': self.token,
-            'Accept': '*/*',
-            'Origin': 'https://fscrm.kraftheinz.net.cn',
-            'Sec-Fetch-Site': 'same-origin',
-            'Sec-Fetch-Mode': 'cors',
-            'Sec-Fetch-Dest': 'empty',
-            'Referer': 'https://fscrm.kraftheinz.net.cn/?code=031NdLkl2SD8ac4BUKll2x4iqC2NdLkO&state=fid%3DN8d3E4AyKCBiu7DuBRNPlw&appid=wx65da983ae179e97b',
-            'Accept-Language': 'zh-CN,zh;q=0.9',
-            'Content-Type': 'application/x-www-form-urlencoded',
+            "Host": "fscrm.kraftheinz.net.cn",
+            "Connection": "keep-alive",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) MacWechat/3.8.7(0x13080712) UnifiedPCMacWechat(0xf2640611) XWEB/14200 Flue",
+            "Authorization": "64b84d3e90d80ddb0d15e15b193ed1bc",
+            "token": self.token,
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "*/*",
+            "Sec-Fetch-Site": "same-origin",
+            "Sec-Fetch-Mode": "cors",
+            "Sec-Fetch-Dest": "empty",
+            "Referer": "https://fscrm.kraftheinz.net.cn/?code=031KeAml2UqlQf4dq3ol29tJX14KeAmi&state=",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Accept-Language": "zh-CN,zh;q=0.9",
+            "Cookie": "_ga=GA1.3.97540441.1742485747",
         }
-        self.baseUrl = 'https://kraftheinzcrm-uat.kraftheinz.net.cn/crm/public/index.php/api/v1/'
+        self.baseUrl = 'https://fscrm.kraftheinz.net.cn/crm/public/index.php/api/v1/'
 
     def getUserInfo(self,End=False):
         global userid_list, username_list
